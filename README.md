@@ -23,7 +23,7 @@ The installation depends on your operating system, please refer to the official 
 
 Initialize the project structure by calling
 
-```
+```bash
 jb init
 ```
 
@@ -31,7 +31,7 @@ This will use Jsonnet-bundler to create a `jsonnetfile.json`. This file will be 
 
 Next, we will declare our `grafonnet` dependency.
 
-```
+```bash
 jb install https://github.com/grafana/grafonnet-lib/grafonnet
 ```
 
@@ -43,7 +43,7 @@ Now we are ready to create our first dashboard!
 
 Here is an example empty dashboard:
 
-```
+```json
 local grafana = import 'grafonnet/grafana.libsonnet';
 
 grafana.dashboard.new(
@@ -56,7 +56,7 @@ with all the DSL required to programatically generate dashboards.
 
 Now, let's convert the dashboard to JSON:
 
-```
+```bash
 jsonnet -J vendor -o dashboard.json dashboard.jsonnet
 ```
 
@@ -70,7 +70,7 @@ First of all, we need an auth token. We can create one via the Grafana UI (Confi
 
 In order to generate our request body, since we will be posting JSON, why not use Jsonnet to embed our newly generate dashboard? We can turn our previous dashboard template into a library by renaming it to `dashboard.libsonnet` and create a new jsonnet file embedding it (`api.jsonnet`) with the following contents:
 
-```
+```json
 local dashboard = import 'dashboard.libsonnet';
 
 {
@@ -82,7 +82,7 @@ local dashboard = import 'dashboard.libsonnet';
 
 Once we have it, we can now generate our API request body and post our dashboard using curl:
 
-```
+```bash
 jsonnet -J vendor -o api.json api.jsonnet
 curl -H 'Accept: application/json' -H 'Content-Type: application/json' -X POST -H "Authorization: Bearer <our token>" -d @api.json https://<grafana host>/api/dashboards/db
 ```
