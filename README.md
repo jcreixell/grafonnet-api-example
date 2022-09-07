@@ -7,6 +7,8 @@ In this example, we will cover the basic usage of Jsonnet and [Jsonnet-bundler](
 
 For more detailed information, please refer to the [Official Documentation](https://grafana.github.io/grafonnet-lib/).
 
+This example works both for [Grafana Cloud](https://grafana.com/products/cloud/) and self-hosted instances.
+
 ## Requirements
 
 You will need the following:
