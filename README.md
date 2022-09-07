@@ -1,9 +1,9 @@
 Grafonnet API Example
 =====================
 
-[Grafonnet] is a [Jsonnet] library for programmatically generating [Grafana] dashboards. It enables templating and easy maintenance of dashboards via source control. Generated Dashboards can be imported manually into Grafana or pushed via API.
+[Grafonnet](https://grafana.github.io/grafonnet-lib/) is a [Jsonnet](https://jsonnet.org/) library for programmatically generating [Grafana](https://grafana.com/) dashboards. It enables templating and easy maintenance of dashboards via source control. Generated Dashboards can be imported manually into Grafana or pushed via API.
 
-In this example, we will cover the basic usage of Jsonnet and [Jsonnet-bundler], as well as the usege of Grafana's API to create and update dashboards.
+In this example, we will cover the basic usage of Jsonnet and [Jsonnet-bundler](https://github.com/jsonnet-bundler/jsonnet-bundler), as well as the usege of Grafana's API to create and update dashboards.
 
 For more detailed information, please refer to the [Official Documentation](https://grafana.github.io/grafonnet-lib/).
 
