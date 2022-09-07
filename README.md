@@ -43,7 +43,7 @@ Now we are ready to create our first dashboard!
 
 Here is an example empty dashboard:
 
-```json
+```
 local grafana = import 'grafonnet/grafana.libsonnet';
 
 grafana.dashboard.new(
@@ -70,7 +70,7 @@ First of all, we need an auth token. We can create one via the Grafana UI (Confi
 
 In order to generate our request body, since we will be posting JSON, why not use Jsonnet to embed our newly generate dashboard? We can turn our previous dashboard template into a library by renaming it to `dashboard.libsonnet` and create a new jsonnet file embedding it (`api.jsonnet`) with the following contents:
 
-```json
+```
 local dashboard = import 'dashboard.libsonnet';
 
 {
